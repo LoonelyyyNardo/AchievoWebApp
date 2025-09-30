@@ -1,68 +1,17 @@
-# CodeIgniter 4 Application Starter
+## Achievo – webová aplikace pro správu času studentů
 
-## What is CodeIgniter?
+Autor: Martin Rygulski
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Cílem této maturitní práce je navrhnout, implementovat a otestovat webovou aplikaci s názvem **Achievo**, která pomůže studentům efektivně organizovat čas, školní povinnosti a úkoly. Aplikace je navržena tak, aby spojovala prvky to-do listu a kalendáře, doplněné o gamifikační mechanismy, které mají uživatele motivovat k pravidelnému plnění povinností. Díky tomu nebude Achievo pouze klasickým plánovačem, ale i nástrojem, který podporuje dlouhodobou disciplínu a motivaci.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Aplikace musí splňovat několik základních požadavků. Uživatel se musí být schopen zaregistrovat a přihlásit do systému, následně si vytvářet a spravovat úkoly, přiřazovat jim termíny a označovat je jako splněné. Dále je součástí implementace kalendář, ve kterém se zobrazují všechny události, například testy, školní projekty či rozvrh hodin. Významnou součástí je také gamifikace – za plnění úkolů uživatel získává body a postupuje na vyšší úrovně. Systém rovněž poskytuje statistiky, které ukazují, kolik úkolů bylo splněno včas a jak se vyvíjí produktivita uživatele. Kromě funkčních požadavků jsou kladeny také nároky na přehledné uživatelské rozhraní, bezpečné ukládání hesel a bezproblémový chod na běžném webhostingu s podporou PHP a MySQL.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+Minimálním produktem, který tyto požadavky naplňuje, je aplikace umožňující registraci a přihlášení uživatele, vytváření úkolů s termínem, jejich označení jako splněných a základní kalendářové zobrazení. Tento základ lze dále rozšiřovat o bodový systém, statistiky a notifikace. Pokud by minimální varianta působila příliš jednoduše, je vhodné doplnit alespoň základní gamifikační prvky, aby aplikace získala na atraktivitě a odlišila se od běžných řešení.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+Primárními uživateli jsou studenti středních a vysokých škol, kteří potřebují mít přehled o svých povinnostech, projektech či testech. Aplikace je navržena jako webová, dostupná prostřednictvím běžného internetového prohlížeče. Serverová část je realizována v jazyce PHP s databází MySQL či MariaDB a frontend využívá HTML5, CSS (například s frameworkem Bootstrap) a JavaScript. Díky tomu je aplikace snadno přístupná z počítače i mobilního telefonu. Cílovou věkovou skupinou jsou studenti ve věku přibližně 15 až 25 let, kteří zvládají základní práci s počítačem a internetem, avšak nemusí mít žádné technické znalosti ani zkušenosti s programováním.
 
-## Installation & updates
+Přínos práce lze rozdělit na dvě části. Pro uživatele představuje Achievo praktický nástroj, který jim umožní plánovat úkoly, získat přehled o svém čase a zároveň je motivuje k vyšší efektivitě prostřednictvím gamifikace. Pro autora práce má projekt zásadní význam z hlediska rozvoje znalostí. Díky němu se seznámí s návrhem databázových systémů, programováním v PHP, práci s MySQL a tvorbou webových aplikací od analýzy přes implementaci až po testování. Projekt tak demonstruje nejen technické dovednosti, ale i schopnost dotáhnout komplexní úkol od nápadu po funkční produkt.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+Mezi konkrétní ověřitelné body patří možnost registrace a přihlášení uživatele, vytvoření a správa úkolů, funkční kalendář, zavedení bodového systému a statistik, stejně jako bezpečné ukládání hesel. Tyto prvky lze snadno testovat a ověřit při prezentaci hotového produktu.
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
-
-## Setup
-
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
-
-## Important Change with index.php
-
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 8.1 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+Na trhu již existují konkurenční řešení, například Google Kalendář, Todoist nebo Microsoft To Do. Google Kalendář je velmi komplexní nástroj, zaměřený na široké spektrum uživatelů, ale neobsahuje gamifikaci ani přizpůsobení školnímu prostředí. Todoist je moderní a propracovaný to-do list, který však cílí spíše na profesionální uživatele a opět mu chybí funkce zaměřené na studenty. Microsoft To Do je jednoduchý správce úkolů, který se dobře integruje do ekosystému Microsoftu, avšak nenabízí statistiky ani herní prvky. Achievo se od těchto aplikací odlišuje svým zaměřením na studenty, kombinací úkolníku, kalendáře a statistik v jednom prostředí a především gamifikačním přístupem, díky kterému je používání aplikace motivující a zábavnější.
